@@ -6798,6 +6798,7 @@ loc_12C64:
 		andi.w	#6,d0
 		move.w	Sonic_Modes(pc,d0.w),d1
 		jsr	Sonic_Modes(pc,d1.w)
+		jsr Sonic_GolfMeter ;snolf-a-gogo!
 
 loc_12C7E:
 		bsr.s	Sonic_Display
@@ -6903,6 +6904,7 @@ loc_12EA6:
 
 		include	"_incObj/Sonic Move.asm"
 		include	"_incObj/Sonic RollSpeed.asm"
+		include "_incObj/Snolf.asm"
 		include	"_incObj/Sonic JumpDirection.asm"
 
 ; ===========================================================================
