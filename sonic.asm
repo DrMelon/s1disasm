@@ -2237,34 +2237,13 @@ LevSel_Level_SS:
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
+		move.w  #0,(Golf_swings_taken).w ; golfmode reset swings
 		move.l	d0,(v_score).w	; clear score
 		if Revision<>0
 			move.l	#5000,(v_scorelife).w ; extra life is awarded at 50000 points
 		endif
 		rts	
 ; ===========================================================================
-
-LevSel_Level:
-		andi.w	#$3FFF,d0
-		move.w	d0,(v_zone).w	; set level number
-
-PlayLevel:
-		move.b	#id_Level,(v_gamemode).w ; set screen mode to $0C (level)
-		move.b	#3,(v_lives).w	; set lives to 3
-		moveq	#0,d0
-		move.w	d0,(v_rings).w	; clear rings
-		move.l	d0,(v_time).w	; clear time
-		move.l	d0,(v_score).w	; clear score
-		move.b	d0,(v_lastspecial).w ; clear special stage number
-		move.b	d0,(v_emeralds).w ; clear emeralds
-		move.l	d0,(v_emldlist).w ; clear emeralds
-		move.l	d0,(v_emldlist+4).w ; clear emeralds
-		move.b	d0,(v_continues).w ; clear continues
-		if Revision<>0
-			move.l	#5000,(v_scorelife).w ; extra life is awarded at 50000 points
-		endif
-		sfx	bgm_Fade,0,1,1 ; fade out music
-		rts	
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Level	select - level pointers
@@ -2315,6 +2294,30 @@ LevSel_Ptrs:	if Revision=0
 		dc.b id_SS, 0		; Special Stage
 		dc.w $8000		; Sound Test
 		even
+
+LevSel_Level:
+		andi.w	#$3FFF,d0
+		move.w	d0,(v_zone).w	; set level number
+
+PlayLevel:
+		move.b	#id_Level,(v_gamemode).w ; set screen mode to $0C (level)
+		move.b	#3,(v_lives).w	; set lives to 3
+		moveq	#0,d0
+		move.w	d0,(v_rings).w	; clear rings
+		move.l	d0,(v_time).w	; clear time
+		move.l	d0,(v_score).w	; clear score	
+		move.w  #0,(Golf_swings_taken).w ; golfmode reset swings	
+		move.b	d0,(v_lastspecial).w ; clear special stage number
+		move.b	d0,(v_emeralds).w ; clear emeralds
+		move.l	d0,(v_emldlist).w ; clear emeralds
+		move.l	d0,(v_emldlist+4).w ; clear emeralds
+		move.b	d0,(v_continues).w ; clear continues
+		if Revision<>0
+			move.l	#5000,(v_scorelife).w ; extra life is awarded at 50000 points
+		endif
+		sfx	bgm_Fade,0,1,1 ; fade out music
+		rts	
+
 ; ---------------------------------------------------------------------------
 ; Level	select codes
 ; ---------------------------------------------------------------------------
@@ -2381,6 +2384,7 @@ Demo_Level:
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
+		move.w  #0,(Golf_swings_taken).w ; golfmode reset swings
 		move.l	d0,(v_score).w	; clear score
 		if Revision<>0
 			move.l	#5000,(v_scorelife).w ; extra life is awarded at 50000 points
@@ -2772,6 +2776,7 @@ Level_LoadObj:
 		bne.s	Level_SkipClr	; if yes, branch
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
+		move.w  #0,(Golf_swings_taken).w ; golfmode reset swings
 		move.b	d0,(v_lifecount).w ; clear lives counter
 
 Level_SkipClr:
@@ -3644,6 +3649,7 @@ Cont_GotoLevel:
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
+		move.w  #0,(Golf_swings_taken).w ; golfmode reset swings
 		move.l	d0,(v_score).w	; clear score
 		move.b	d0,(v_lastlamp).w ; clear lamppost count
 		subq.b	#1,(v_continues).w ; subtract 1 from continues
@@ -3747,6 +3753,7 @@ End_LoadSonic:
 		moveq	#0,d0
 		move.w	d0,(v_rings).w
 		move.l	d0,(v_time).w
+		move.w  #0,(Golf_swings_taken).w ; golfmode reset swings
 		move.b	d0,(v_lifecount).w
 		move.b	d0,(v_shield).w
 		move.b	d0,(v_invinc).w
@@ -3987,6 +3994,7 @@ EndingDemoLoad:
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
+		move.w  #0,(Golf_swings_taken).w ; golfmode reset swings
 		move.l	d0,(v_score).w	; clear score
 		move.b	d0,(v_lastlamp).w ; clear lamppost counter
 		cmpi.w	#4,(v_creditsnum).w ; is SLZ demo running?

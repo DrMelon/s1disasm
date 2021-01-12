@@ -3,9 +3,10 @@
     a. Snolf Functions (DONE)
     b. Injection/Control (Prevent Unrolling, etc) (DONE)
     c. Wall Bouncing (DONE)
-    d. HUD Shows Shot Count
+    d. HUD Shows Shot Count (DONE)
     e. Sound Effects
     f. Shot Strength Display
+    g. Infinite Lives (DONE)
 3. Title Screen Art
 4. PCM Replacement
 5. UI GFX Replacement

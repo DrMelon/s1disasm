@@ -30,7 +30,7 @@ HUD_Update:
 		clr.b	(f_ringcount).w
 		hudVRAM	$DF40		; set VRAM address
 		moveq	#0,d1
-		move.w	(v_rings).w,d1	; load number of rings
+		move.w	(Golf_swings_taken).w,d1	; load number of rings
 		bsr.w	Hud_Rings
 
 .chktime:
@@ -107,7 +107,7 @@ HudDebug:
 		clr.b	(f_ringcount).w
 		hudVRAM	$DF40		; set VRAM address
 		moveq	#0,d1
-		move.w	(v_rings).w,d1	; load number of rings
+		move.w	(Golf_swings_taken).w,d1	; load number of rings
 		bsr.w	Hud_Rings
 
 .objcounter:
