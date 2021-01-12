@@ -48,6 +48,7 @@ REM // done -- pause if we seem to have failed, then exit
 IF NOT EXIST sonic.p goto LABLPAUSE
 IF NOT EXIST s1built.bin goto LABLPAUSE
 fixheader s1built.bin
+convsym sonic.lst s1built.bin -input as_lst -a
 exit /b
 :LABLPAUSE
 
