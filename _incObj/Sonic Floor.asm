@@ -24,14 +24,18 @@ Sonic_Floor:
 		tst.w	d1
 		bpl.s	loc_135F0
 		sub.w	d1,obX(a0)
-		move.w	#0,obVelX(a0)
+		; golfmode wall bounce check
+		jsr Golf_Bouncer
+		;move.w	#0,obVelX(a0)
 
 loc_135F0:
 		bsr.w	sub_14EB4
 		tst.w	d1
 		bpl.s	loc_13602
 		add.w	d1,obX(a0)
-		move.w	#0,obVelX(a0)
+		; golfmode wall bounce check
+		jsr Golf_Bouncer
+		;move.w	#0,obVelX(a0)
 
 loc_13602:
 		bsr.w	Sonic_HitFloor
@@ -70,7 +74,9 @@ loc_1364E:
 ; ===========================================================================
 
 loc_1365C:
-		move.w	#0,obVelX(a0)
+		; golfmode wall bounce check
+		jsr Golf_Bouncer
+		;move.w	#0,obVelX(a0)
 		cmpi.w	#$FC0,obVelY(a0)
 		ble.s	loc_13670
 		move.w	#$FC0,obVelY(a0)
@@ -90,7 +96,9 @@ loc_13680:
 		tst.w	d1
 		bpl.s	loc_1369A
 		sub.w	d1,obX(a0)
-		move.w	#0,obVelX(a0)
+		; golfmode wall bounce check
+		jsr Golf_Bouncer
+		;move.w	#0,obVelX(a0)
 		move.w	obVelY(a0),obInertia(a0)
 		rts	
 ; ===========================================================================
@@ -130,14 +138,18 @@ loc_136E2:
 		tst.w	d1
 		bpl.s	loc_136F4
 		sub.w	d1,obX(a0)
-		move.w	#0,obVelX(a0)
+		; golfmode wall bounce check
+		jsr Golf_Bouncer
+		;move.w	#0,obVelX(a0)
 
 loc_136F4:
 		bsr.w	sub_14EB4
 		tst.w	d1
 		bpl.s	loc_13706
 		add.w	d1,obX(a0)
-		move.w	#0,obVelX(a0)
+		; golfmode wall bounce check
+		jsr Golf_Bouncer
+		;move.w	#0,obVelX(a0)
 
 loc_13706:
 		bsr.w	Sonic_DontRunOnWalls
@@ -169,7 +181,9 @@ loc_1373E:
 		tst.w	d1
 		bpl.s	loc_13758
 		add.w	d1,obX(a0)
-		move.w	#0,obVelX(a0)
+		; golfmode wall bounce check
+		jsr Golf_Bouncer
+		;move.w	#0,obVelX(a0)
 		move.w	obVelY(a0),obInertia(a0)
 		rts	
 ; ===========================================================================

@@ -8,6 +8,11 @@
 Sonic_JumpDirection:
 		move.w	(v_sonspeedmax).w,d6
 		move.w	(v_sonspeedacc).w,d5
+		tst.b (f_lockctrl).w ; golfmode check inverse control lock
+		bne.s +
+		btst #2,obStatus(a0) ; sonic rolled? do not allow air control for snolf
+		bne.s Obj01_ResetScr2 
++
 		asl.w	#1,d5
 		btst	#4,obStatus(a0)
 		bne.s	Obj01_ResetScr2

@@ -6,6 +6,8 @@
 
 
 Sonic_Roll:
+		tst.b (f_lockctrl).w; golfmode check - always roll in snolf.
+		beq.s Sonic_ChkRoll 
 		tst.b	(f_jumponly).w
 		bne.s	.noroll
 		move.w	obInertia(a0),d0
@@ -25,7 +27,7 @@ Sonic_Roll:
 		rts	
 ; ===========================================================================
 
-Sonic_ChkRoll:
+Sonic_ChkRoll: ; start rolling
 		btst	#2,obStatus(a0)	; is Sonic already rolling?
 		beq.s	.roll		; if not, branch
 		rts	
@@ -39,8 +41,8 @@ Sonic_ChkRoll:
 		addq.w	#5,obY(a0)
 		sfx	sfx_Roll,0,0,0	; play rolling sound
 		tst.w	obInertia(a0)
-		bne.s	.ismoving
-		move.w	#$200,obInertia(a0) ; set inertia if 0
+		;bne.s	.ismoving
+		;move.w	#$200,obInertia(a0) ; set inertia if 0 --- Disabled for Snolf.
 
 .ismoving:
 		rts	

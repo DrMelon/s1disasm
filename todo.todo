@@ -1,8 +1,8 @@
-1. Snolf Gameplay Variables in Constants
-2. Snolf Gameplay Code Ported
-    a. Snolf Functions 
-    b. Injection/Control (Prevent Unrolling, etc)
-    c. Wall Bouncing
+1. Snolf Gameplay Variables (DONE)
+2. Snolf Gameplay Code Ported 
+    a. Snolf Functions (DONE)
+    b. Injection/Control (Prevent Unrolling, etc) (DONE)
+    c. Wall Bouncing (DONE)
     d. HUD Shows Shot Count
     e. Sound Effects
     f. Shot Strength Display

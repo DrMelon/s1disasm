@@ -49,7 +49,9 @@ loc_131A6:
 loc_131AA:
 		tst.w	obInertia(a0)	; is Sonic moving?
 		bne.s	loc_131CC	; if yes, branch
-		bclr	#2,obStatus(a0)
+		tst.b (f_lockctrl).w ; golfmode? if so, we can't unroll
+		beq.s   loc_131CC
+		bclr	#2,obStatus(a0) ; clears rolling state
 		move.b	#$13,obHeight(a0)
 		move.b	#9,obWidth(a0)
 		move.b	#id_Wait,obAnim(a0) ; use "standing" animation

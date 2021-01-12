@@ -6,6 +6,8 @@
 
 
 Sonic_Jump:
+		tst.b (f_lockctrl).w ; golfmode check; no jumping in snolf
+		beq.w locret_1348E
 		move.b	(v_jpadpress2).w,d0
 		andi.b	#btnABC,d0	; is A, B or C pressed?
 		beq.w	locret_1348E	; if not, branch

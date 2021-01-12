@@ -6851,9 +6851,15 @@ MusicList2:
 ; ---------------------------------------------------------------------------
 
 Sonic_MdNormal:
+		tst.b (f_lockctrl).w ; test golfmode
+		beq.s +
 		bsr.w	Sonic_Jump
++
 		bsr.w	Sonic_SlopeResist
+		tst.b (f_lockctrl).w ; test golfmode again
+		beq.s +
 		bsr.w	Sonic_Move
++
 		bsr.w	Sonic_Roll
 		bsr.w	Sonic_LevelBound
 		jsr	(SpeedToPos).l
@@ -6878,7 +6884,10 @@ loc_12E5C:
 ; ===========================================================================
 
 Sonic_MdRoll:
+		tst.b (f_lockctrl).w ; test golfmode
+		beq.s +
 		bsr.w	Sonic_Jump
++
 		bsr.w	Sonic_RollRepel
 		bsr.w	Sonic_RollSpeed
 		bsr.w	Sonic_LevelBound

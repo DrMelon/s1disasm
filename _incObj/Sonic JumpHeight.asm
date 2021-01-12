@@ -6,6 +6,8 @@
 
 
 Sonic_JumpHeight:
+		tst.b (f_lockctrl).w ; golfmode check - no yvel cap in snolf
+		beq.s locret_134C2
 		tst.b	$3C(a0)
 		beq.s	loc_134C4
 		move.w	#-$400,d1
