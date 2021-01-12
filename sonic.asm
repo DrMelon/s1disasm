@@ -5698,6 +5698,7 @@ Map_Missile:	include	"_maps/Buzz Bomber Missile.asm"
 		include	"_incObj/25 & 37 Rings.asm"
 		include	"_incObj/4B Giant Ring.asm"
 		include	"_incObj/7C Ring Flash.asm"
+		
 
 		include	"_anim/Rings.asm"
 		if Revision=0
@@ -5757,6 +5758,7 @@ Map_Push:	include	"_maps/Pushable Blocks.asm"
 		include	"_incObj/3A Got Through Card.asm"
 		include	"_incObj/7E Special Stage Results.asm"
 		include	"_incObj/7F SS Result Chaos Emeralds.asm"
+		include "_incObj/Golf Objects.asm"
 
 ; ---------------------------------------------------------------------------
 ; Sprite mappings - zone title cards

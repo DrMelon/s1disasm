@@ -36,8 +36,8 @@ Golf_ResetBall:
 	; tele vfx & sfx
 	;move.b	#$40,(Teleport_active_timer).w
 	;move.b	#1,(Teleport_active_flag).w
-	;move.w	#SndID_Teleport,d0
-	;jsr	(PlaySound).l	; play teleport bzeoow sound
+	move.w	#sfx_Teleport,d0 ; play teleport sound
+	jsr	(PlaySound_Special).l
 	
 	rts
 
@@ -126,23 +126,24 @@ GolfButtonPressed:
 GolfSkipAccumLeft:
 
 	; ENTERING STRIKE MODE = ADD PIP
-	;jsr	(Create_New_Sprite).l
-	;move.l	#Obj_GolfMeterPip,(a1) ; load objDD via GolfMeterH.
+    bsr.w	FindFreeObj
+	_move.b	#id_GolfMeterPip,(a1) ; load objDD via GolfMeterH.
 
 
 	; ENTERING STRIKE MODE = ADD H-BAR
-	;jsr	(Create_New_Sprite).l
-	;move.l	#Obj_GolfMeterH,(a1) ; load objDD via GolfMeterH.
+    bsr.w	FindFreeObj
+	_move.b	#id_GolfMeterH,(a1) ; load objDD via GolfMeterH.
 
-	;move.w	#sfx_LightTunnel,d0
-	;jsr	(Play_Sound).l	; play rev sound
+	move.w	#sfx_Bumper,d0 ; play sound
+	jsr	(PlaySound_Special).l
 	jmp 	GolfButtonNotPressed
 +
 	;in strike status already, check if it's in X or Y mode, and advance to next step if so
 	btst	#1,(Golf_mode_status).w
 	bne.s	GolfSwing
-	;move.w	#sfx_PulleyGrab,d0
-	;jsr	(Play_Sound).l	; play blip sound
+
+	move.w	#sfx_Bumper,d0 ;play sound
+	jsr	(PlaySound_Special).l
 	; ENTERING Y MODE - RESET ACCUM
 	move.w	#127,(Golf_accumulator).w ;127 for cosine is at bottom.
 
@@ -168,8 +169,8 @@ GolfSwing:
 	move.w 	#1,(Golf_did_just_swing).w ; set just-hit flag
 
 	; play sound
-	;move.w	#sfx_FloorLauncher,d0 ;   maybe set noise based on strength of hit? monitor pop, thoomp, spring...
-	;jsr	(Play_Sound).l	; play spindash rev sound
+    move.w	#sfx_Basaran,d0 ;play sound
+	jsr	(PlaySound_Special).l
 	ori.b 	#1,(f_ringcount).w ; tell hud to update
 	
 

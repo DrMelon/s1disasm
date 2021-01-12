@@ -35,7 +35,7 @@ SolidObject:
 
 .stand:
 		move.w	d4,d2
-		bsr.w	MvSonicOnPtfm
+		jsr	MvSonicOnPtfm ; golfmode - potentially spooky
 		moveq	#0,d4
 		rts	
 ; ===========================================================================
@@ -64,7 +64,7 @@ SolidObject71:
 
 .stand:
 		move.w	d4,d2
-		bsr.w	MvSonicOnPtfm
+		jsr	MvSonicOnPtfm ; golfmode - potentially spooky
 		moveq	#0,d4
 		rts	
 ; ===========================================================================
