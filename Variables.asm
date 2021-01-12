@@ -3,18 +3,18 @@
 ramaddr function x,(-(x&$80000000)<<1)|x
 
 ; Variables (v) and Flags (f)
-Golf_meter_x = ramaddr($FFFFA000) ; 2 bytes
-Golf_meter_y = ramaddr($FFFFA002) ; 2 bytes
-Golf_swings_taken = ramaddr($FFFFA004) ; 2 bytes for sizing
-Golf_mode_status = ramaddr($FFFFA006) ; 2 bytes; bit 0 = golf strike mode on/off, bit 1 = golf strike mode X/Y, bit 2 = golf mode override, bit 3 = is golf mode cheat on
-Golf_bar_posx = ramaddr($FFFFA008) ; 2 bytes; golf bar pos stuff
-Golf_bar_posy = ramaddr($FFFFA00A); 2 bytes
-Golf_reset_timer = ramaddr($FFFFA00C); 2 bytes
-Golf_accumulator = ramaddr($FFFFA00E); 2 bytes - to be used instead of timer_frames for golfin'
-Golf_swings_total = ramaddr($FFFFA010); 2 bytes - swing total over whole game. hopefully nobody takes more than 65535 swings...
-Golf_did_just_swing = ramaddr($FFFFA012); 2 bytes - did we just swing?
-Golf_force_allow = ramaddr($FFFFA014); 2 bytes - force allow swings. for autoscroll sections
-Golf_force_temp = ramaddr($FFFFA016); 2 bytes - same as golf force allow, but only for 1 swing
+Golf_meter_x = ramaddr($FFFFF5C2) ; 2 bytes
+Golf_meter_y = ramaddr($FFFFF5C4) ; 2 bytes
+Golf_swings_taken = ramaddr($FFFFF5C6) ; 2 bytes for sizing
+Golf_mode_status = ramaddr($FFFFF5C8) ; 2 bytes; bit 0 = golf strike mode on/off, bit 1 = golf strike mode X/Y, bit 2 = golf mode override, bit 3 = is golf mode cheat on
+Golf_bar_posx = ramaddr($FFFFF5CA) ; 2 bytes; golf bar pos stuff
+Golf_bar_posy = ramaddr($FFFFF5CC); 2 bytes
+Golf_reset_timer = ramaddr($FFFFF5CE); 2 bytes
+Golf_accumulator = ramaddr($FFFFF5D0); 2 bytes - to be used instead of timer_frames for golfin'
+Golf_swings_total = ramaddr($FFFFF5D2); 2 bytes - swing total over whole game. hopefully nobody takes more than 65535 swings...
+Golf_did_just_swing = ramaddr($FFFFF5D4); 2 bytes - did we just swing?
+Golf_force_allow = ramaddr($FFFFF5D6); 2 bytes - force allow swings. for autoscroll sections
+Golf_force_temp = ramaddr($FFFFF5D8); 2 bytes - same as golf force allow, but only for 1 swing
 
 
 v_regbuffer	= ramaddr ( $FFFFFC00 )	; stores registers d0-a7 during an error event ($40 bytes)

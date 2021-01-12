@@ -1,0 +1,14 @@
+SystemID GEN
+00F5C2	w	s	1	68K RAM	Golf Meter X
+00F5C4	w	s	1	68K RAM	Golf Meter Y
+00F5C6	w	u	1	68K RAM	SwingsTaken
+00F5C8	w	b	1	68K RAM	Status Flag
+00F5CA	w	s	1	68K RAM	GolfBarPosX
+00F5CC	w	s	1	68K RAM	GolfBarPosY
+00F5CE	w	u	1	68K RAM	Reset Timer
+00F5D0	w	u	1	68K RAM	Acc
+00F5D2	w	u	1	68K RAM	Swings Total
+00F5D4	w	b	1	68K RAM	DidSwing
+00F5D6	w	b	1	68K RAM	ForceAllow
+00F5D8	w	b	1	68K RAM	ForceTemp
+
