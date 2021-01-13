@@ -27,6 +27,32 @@
                 "customDefinition": "",
                 "label": ""
             }
+        },
+        {
+            "name": "Portrait",
+            "palettes": [
+                {
+                    "path": "..\\palette\\Sonic.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "..\\artnem\\HUD - Life Counter Icon.bin",
+                "compression": "Nemesis"
+            },
+            "mappings": {
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            }
         }
     ]
 }
