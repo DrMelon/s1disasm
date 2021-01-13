@@ -2671,7 +2671,7 @@ SoundD0:	binclude	"sound/sfx/SndD0 - Waterfall.bin"
 		if ((*)&$7FFF)+Size_of_SegaPCM>$8000
 			align $8000
 		endif
-SegaPCM:	binclude	"sound/dac/sega.pcm"
+SegaPCM:	binclude	"sound/dac/snolf.pcm"
 SegaPCM_End
 		even
 
