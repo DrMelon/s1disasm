@@ -53,6 +53,27 @@
                 "customDefinition": "",
                 "label": ""
             }
+        },
+        {
+            "name": "RingsCount",
+            "palettes": [],
+            "art": {
+                "path": "..\\artnem\\HUD.bin",
+                "compression": "Nemesis"
+            },
+            "mappings": {
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            }
         }
     ]
 }
