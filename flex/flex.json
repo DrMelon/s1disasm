@@ -1,0 +1,32 @@
+{
+    "description": "Flex 2 Project File",
+    "name": "SNOLF_ZERO",
+    "objects": [
+        {
+            "name": "TitleCard",
+            "palettes": [
+                {
+                    "path": "..\\palette\\Title Screen.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "..\\artnem\\Title Screen Foreground.bin",
+                "compression": "Nemesis"
+            },
+            "mappings": {
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            }
+        }
+    ]
+}

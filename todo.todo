@@ -7,7 +7,7 @@
     e. Sound Effects (DONE)
     f. Shot Strength Display (DONE)
     g. Infinite Lives (DONE)
-    h. Fix the warp bug? Hmm...
+    h. Fix the warp bug? Hmm... (DONE, it was a wrapping camera issue. Thx SonicRetro!)
 3. Title Screen Art
 4. PCM Replacement
 5. UI GFX Replacement

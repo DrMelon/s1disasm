@@ -11,4 +11,6 @@ SystemID GEN
 00F5D4	w	b	1	68K RAM	DidSwing
 00F5D6	w	b	1	68K RAM	ForceAllow
 00F5D8	w	b	1	68K RAM	ForceTemp
+00D008	w	u	1	68K RAM	XPOS
+00D00C	w	u	1	68K RAM	YPOS
 

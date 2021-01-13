@@ -26,8 +26,10 @@ GolfBouncerEnd:
     rts
 
 Golf_ResetBall:
-	move.w	(Golf_bar_posx).w,obX(a0)
-	move.w	(Golf_bar_posy).w,obY(a0)
+    move.w (Golf_bar_posx).w,d0
+	move.w	d0,obX(a0)
+	move.w	(Golf_bar_posy).w,d0
+    move.w  d0,obY(a0)
 
 	move.w	#0,obVelX(a0)
 	move.w	#0,obVelY(a0)
