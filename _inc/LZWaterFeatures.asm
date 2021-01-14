@@ -420,6 +420,7 @@ loc_3F84:
 loc_3F9A:
 		clr.b	obInertia+1(a1)
 		move.b	#id_WaterSlide,obAnim(a1) ; use Sonic's "sliding" animation
+		move.w #1,(Golf_force_temp).w ;  golfmode - allow snolfing
 		move.b	#1,(f_jumponly).w ; lock controls (except jumping)
 		move.b	(v_vbla_byte).w,d0
 		andi.b	#$1F,d0
