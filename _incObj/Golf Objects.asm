@@ -12,8 +12,8 @@ Obj_GolfMeterH_Index: dc.w Obj_GolfMeterH_Init-Obj_GolfMeterH_Index; 0
 
 Obj_GolfMeterH_Init:
 	addq.b	#2,obRoutine(a0)
-	move.l	#Map_Ring,obMap(a0)
-	move.w	#$27B2,obGfx(a0)
+	move.l	#Map_ShotMeter,obMap(a0)
+	move.w	#$27AF,obGfx(a0)
 	move.b	#4,obRender(a0)
 	move.w	#$80,obPriority(a0)
 	move.b	#8,obWidth(a0)

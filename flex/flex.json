@@ -74,6 +74,32 @@
                 "customDefinition": "",
                 "label": ""
             }
+        },
+        {
+            "name": "ShotMeter",
+            "palettes": [
+                {
+                    "path": "..\\palette\\Sonic.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "..\\artnem\\ShotMeter.bin",
+                "compression": "Nemesis"
+            },
+            "mappings": {
+                "path": "..\\artnem\\ShotMeterMapping.asm",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            }
         }
     ]
 }

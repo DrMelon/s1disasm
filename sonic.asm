@@ -5706,6 +5706,7 @@ Map_Ring:	include	"_maps/Rings.asm"
 		else
 Map_Ring:		include	"_maps/Rings (JP1).asm"
 		endif
+Map_ShotMeter: include "artnem/ShotMeterMapping.asm"
 Map_GRing:	include	"_maps/Giant Ring.asm"
 Map_Flash:	include	"_maps/Ring Flash.asm"
 		include	"_incObj/26 Monitor.asm"
@@ -5759,6 +5760,8 @@ Map_Push:	include	"_maps/Pushable Blocks.asm"
 		include	"_incObj/7E Special Stage Results.asm"
 		include	"_incObj/7F SS Result Chaos Emeralds.asm"
 		include "_incObj/Golf Objects.asm"
+
+
 
 ; ---------------------------------------------------------------------------
 ; Sprite mappings - zone title cards
@@ -8665,6 +8668,8 @@ Nem_Hud:	binclude	"artnem/HUD.bin"	; HUD (rings, time, score)
 Nem_Lives:	binclude	"artnem/HUD - Life Counter Icon.bin"
 		even
 Nem_Ring:	binclude	"artnem/Rings.bin"
+		even
+Nem_ShotMeter binclude "artnem/ShotMeter.bin"
 		even
 Nem_Monitors:	binclude	"artnem/Monitors.bin"
 		even
