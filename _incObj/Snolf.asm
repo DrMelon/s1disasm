@@ -136,7 +136,7 @@ GolfSkipAccumLeft:
     bsr.w	FindFreeObj
 	_move.b	#id_GolfMeterH,(a1) ; load objDD via GolfMeterH.
 
-	move.w	#sfx_Bumper,d0 ; play sound
+	move.w	#sfx_Fireball,d0 ; play sound
 	jsr	(PlaySound_Special).l
 	jmp 	GolfButtonNotPressed
 +
@@ -144,7 +144,7 @@ GolfSkipAccumLeft:
 	btst	#1,(Golf_mode_status).w
 	bne.s	GolfSwing
 
-	move.w	#sfx_Bumper,d0 ;play sound
+	move.w	#sfx_Fireball,d0 ;play sound
 	jsr	(PlaySound_Special).l
 	; ENTERING Y MODE - RESET ACCUM
 	move.w	#127,(Golf_accumulator).w ;127 for cosine is at bottom.
