@@ -2899,8 +2899,8 @@ Level_TtlCardLoop:
 		move.b	#id_HUD,(v_objspace+$40).w ; load HUD object
 
 Level_ChkDebug:
-		tst.b	(f_debugcheat).w ; has debug cheat been entered?
-		beq.s	Level_ChkWater	; if not, branch
+		;tst.b	(f_debugcheat).w ; has debug cheat been entered?
+		;beq.s	Level_ChkWater	; if not, branch
 		btst	#bitA,(v_jpadhold1).w ; is A button held?
 		beq.s	Level_ChkWater	; if not, branch
 		move.b	#1,(f_debugmode).w ; enable debug mode
@@ -9039,7 +9039,7 @@ Level_Index:
 		dc.w byte_6A320-Level_Index, byte_6A320-Level_Index, byte_6A320-Level_Index
 		dc.w byte_6A320-Level_Index, byte_6A320-Level_Index, byte_6A320-Level_Index
 
-Level_GHZ1:	incbin	"levels\ghz1.bin"
+Level_GHZ1:	incbin	"levels\wfc.bin"
 		even
 byte_68D70:	dc.b 0,	0, 0, 0
 Level_GHZ2:	incbin	"levels\ghz2.bin"
