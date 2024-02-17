@@ -9039,7 +9039,7 @@ Level_Index:
 		dc.w byte_6A320-Level_Index, byte_6A320-Level_Index, byte_6A320-Level_Index
 		dc.w byte_6A320-Level_Index, byte_6A320-Level_Index, byte_6A320-Level_Index
 
-Level_GHZ1:	incbin	"levels\wfc.bin"
+Level_GHZ1:	incbin	"levels\ghz1.bin"
 		even
 byte_68D70:	dc.b 0,	0, 0, 0
 Level_GHZ2:	incbin	"levels\ghz2.bin"
