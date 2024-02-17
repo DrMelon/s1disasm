@@ -78,7 +78,7 @@ DLE_GHZ1:
 		move.w	#$300,(v_limitbtm1).w ; set lower y-boundary
 		cmpi.w	#$20,(v_screenposx).w ; has the camera reached $1780 on x-axis?
 		bcs.s	locret_6E08	; if not, branch
-		move.w	#$400,(v_limitbtm1).w ; set lower y-boundary
+		move.w	#$800,(v_limitbtm1).w ; set lower y-boundary
 
 locret_6E08:
 		rts	
