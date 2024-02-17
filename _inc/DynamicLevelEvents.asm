@@ -75,7 +75,7 @@ DLE_GHZx:	dc.w DLE_GHZ1-DLE_GHZx
 ; ===========================================================================
 
 DLE_GHZ1:
-		move.w	#$300,(v_limitbtm1).w ; set lower y-boundary
+		move.w	#$800,(v_limitbtm1).w ; set lower y-boundary
 		cmpi.w	#$20,(v_screenposx).w ; has the camera reached $1780 on x-axis?
 		bcs.s	locret_6E08	; if not, branch
 		move.w	#$800,(v_limitbtm1).w ; set lower y-boundary
@@ -85,16 +85,16 @@ locret_6E08:
 ; ===========================================================================
 
 DLE_GHZ2:
-		move.w	#$300,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 		cmpi.w	#$ED0,(v_screenposx).w
 		bcs.s	locret_6E3A
-		move.w	#$200,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 		cmpi.w	#$1600,(v_screenposx).w
 		bcs.s	locret_6E3A
-		move.w	#$400,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 		cmpi.w	#$1D60,(v_screenposx).w
 		bcs.s	locret_6E3A
-		move.w	#$300,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 
 locret_6E3A:
 		rts	
@@ -112,19 +112,19 @@ off_6E4A:	dc.w DLE_GHZ3main-off_6E4A
 ; ===========================================================================
 
 DLE_GHZ3main:
-		move.w	#$300,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 		cmpi.w	#$380,(v_screenposx).w
 		bcs.s	locret_6E96
-		move.w	#$310,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 		cmpi.w	#$960,(v_screenposx).w
 		bcs.s	locret_6E96
 		cmpi.w	#$280,(v_screenposy).w
 		bcs.s	loc_6E98
-		move.w	#$400,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 		cmpi.w	#$1380,(v_screenposx).w
 		bcc.s	loc_6E8E
-		move.w	#$4C0,(v_limitbtm1).w
-		move.w	#$4C0,(v_limitbtm2).w
+		move.w	#$800,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm2).w
 
 loc_6E8E:
 		cmpi.w	#$1700,(v_screenposx).w
@@ -135,7 +135,7 @@ locret_6E96:
 ; ===========================================================================
 
 loc_6E98:
-		move.w	#$300,(v_limitbtm1).w
+		move.w	#$800,(v_limitbtm1).w
 		addq.b	#2,(v_dle_routine).w
 		rts	
 ; ===========================================================================
